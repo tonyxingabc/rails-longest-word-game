@@ -1,0 +1,9 @@
+<h1>Results</h1>
+<% if @result[:message] == 'API fail' %>
+  <p>Sorry but <strong><%= @input %></strong> does not seem to be a valid English word...</p>
+<% elsif @result[:message] == 'grid fail' %>
+  <p>Sorry but <strong><%= @input %></strong> can't be build out of <%= @letters.gsub(" ",', ') %></p>
+<% else %>
+  <p><strong>Contragtulations!</strong> <%= @input %> is a valid English word!</p>
+<% end %>
+<%= link_to "Play again", '/new' %>
